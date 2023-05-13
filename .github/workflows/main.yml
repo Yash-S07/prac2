@@ -1,23 +1,22 @@
-name - First_workflow
+name : First_workflow
 
 on:
-  pull_requests:
+  pull_request:
     branches:
-      br1
+      - br1
 
 jobs:
   first:
-    name: first
-    runs_on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-      run: print("hello world")
-      shell: python
-
+      - name: hello
+        run: print("hello world")
+        shell: python
   second:
-    name: second
-    runs_on: windows-latest
+    runs-on: windows-latest
     steps:
-      run: print("end")
-      shell: python
+      - name: bye
+        run: print("end")
+        shell: python
 
 
